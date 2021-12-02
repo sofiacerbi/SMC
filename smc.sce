@@ -20,11 +20,13 @@ a23 = Kt*tan(alfa)/(r*d);
 a32 = -2*%pi*Kb/(p*L);
 a33 = -R/L;
 b31 = 1/L;
-w21 = -1/d;
 
 Ax = [0 1 0; 0 a22 a23; 0 a32 a33];
 Bx = [0; 0; b31];
-Wfx = [0; w21; 0];
+Cx = [1 0 0];
+Dx = 0;
+
+motorX = syslin('c',Ax,Bx,Cx,Dx);
 
 //Motor Y
 R = 1.92;
@@ -45,8 +47,10 @@ a23 = Kt*tan(alfa)/(r*d);
 a32 = -2*%pi*Kb/(p*L);
 a33 = -R/L;
 b31 = 1/L;
-w21 = -1/d;
 
 Ay = [0 1 0; 0 a22 a23; 0 a32 a33];
 By = [0; 0; b31];
-Wfy = [0; w21; 0];
+Cy = [1 0 0];
+Dy = 0;
+
+motorY = syslin('c',Ay,By,Cy,Dy);
