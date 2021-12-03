@@ -11,9 +11,13 @@ rp = 0.011;     //radio de paso del piñón
 rg = 20;       //relación de transmsión del tren de engranajes
 betaa = 0.004;  //coeficiente de fricción viscosa
 betaam = 0.004; //fricción viscosa en los cojinetes
-Ff = 10;        //fricción de Coulomb
+Ff = 1;        //fricción de Coulomb
 
 //Parámetros
 J = Im + (Ip+m*rp*rp)/(n*rg*rg);
 B = betaam + (betaa*rp*rp)/(n*rg*rg);
 Tf = Ff*rp/(n*rg);
+
+//Controlador
+C = 1.5;
+rho = 0.5;
